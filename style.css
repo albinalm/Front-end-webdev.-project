@@ -86,7 +86,8 @@ input[name="r"] {
         font-family: "Gruppo";
         color: white;
         font-style: italic;
-        text-shadow: 2px 2px 2px black    }
+        text-shadow: 2px 2px 2px black    
+    }
 
     .Navbar {
         list-style-type: none;

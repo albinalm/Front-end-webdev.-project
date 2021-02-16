@@ -14,3 +14,12 @@
 ## Today
 * Manage issues and structure workload
 * Create "About me page"
+
+# Wednesday 2021-02-17 [Insert timestamp tomorrow]
+## Yesterday
+* ~~Manage issues and structure workload~~ - Finished
+* ~~Create "About me page"~~ - Finished
+* NEW * ~~Re-master GUI layout, design and implement grid system~~ - Finished'
+
+## Today
+* Design necessary "Account"-pages

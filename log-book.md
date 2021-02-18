@@ -15,11 +15,20 @@
 * Manage issues and structure workload
 * Create "About me page"
 
-# Wednesday 2021-02-17 [Insert timestamp tomorrow]
+# Wednesday 2021-02-17
 ## Yesterday
 * ~~Manage issues and structure workload~~ - Finished
 * ~~Create "About me page"~~ - Finished
 * NEW * ~~Re-master GUI layout, design and implement grid system~~ - Finished'
 
 ## Today
-* Design necessary "Account"-pages
+~~* Design necessary "Account"-pages~~ - Postphoned
+### Time off! Reasoning: Neccessary automobile repairs
+
+# Thursday 2021-02-18
+## Yesterday
+* *Automobile repairs*
+
+## Today
+~~* Design necessary "Account"-pages~~ - **Slight progress with implementation of Okta, not committed on Git. Postphoned until Friday 02-19.**
+### Time off! Reasoning: Neccessary automobile repairs

@@ -32,3 +32,22 @@
 ## Today
 ~~* Design necessary "Account"-pages~~ - **Slight progress with implementation of Okta, not committed on Git. Postphoned until Friday 02-19.**
 ### Time off! Reasoning: Neccessary automobile repairs
+
+# Friday 2021-02-18 11:40
+## Yesterday
+* *Automobile repairs*
+
+## Today
+* Design necessary "Account"-pages
+* Research lib for account features
+* Implement basic login feature
+
+# Monday 2021-02-22 [Insert timestamp on workday]
+## Yesterday
+* **~~Design necessary "Account"-pages~~** - **Login logout page finished. Need to design proper "account-page"**
+* Research lib for account features - Finished
+* Implement basic login feature - Finished
+
+## Today
+* Finish designing account page
+* Research REST-API to use

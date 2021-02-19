@@ -45,8 +45,8 @@
 # Monday 2021-02-22 [Insert timestamp on workday]
 ## Yesterday
 * **~~Design necessary "Account"-pages~~** - **Login logout page finished. Need to design proper "account-page"**
-* Research lib for account features - Finished
-* Implement basic login feature - Finished
+* **~~Research lib for account features~~** - Finished
+* **~~Implement basic login feature~~** - Finished
 
 ## Today
 * Finish designing account page

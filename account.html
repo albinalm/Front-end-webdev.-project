@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="account_style.css">
+<html>
+
+<head>
+    <script src="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/5.1.5/js/okta-sign-in.min.js"
+        type="text/javascript"></script>
+    <link href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/5.1.5/css/okta-sign-in.min.css"
+        type="text/css" rel="stylesheet" />
+
+    <title>Logga in på Forgify</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+</head>
+<div class="container">
+    <nav>
+        <ul class="Navbar">
+            <li><a href="aboutme.html">About me</a></li>
+            <li><a href="account.html">Account</a></li>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+    <main>
+        <img class="logo" src="images/ForgifyLogo2.0.png">
+        <div class="login-details">
+            <div id="messageBox" class="jumbotron">
+                Vänligen logga in för att se dina beställningar och orderdetaljer.
+            </div>
+        </div>
+
+
+    </main>
+    <div id="content">
+        <div id="account-page">
+            <button type="button" id="logoff-button">Log off</button>
+        </div>
+        <div id="okta-login-container">
+            <script type="text/javascript">
+            
+                (function (OktaSignIn) {
+                    const $accountpage = document.getElementById("account-page");
+                    const $logoffbutton = document.getElementById("logoff-button");
+
+                    const oktaSignIn = new OktaSignIn({
+                        baseUrl: "https://dev-77574371.okta.com", // Replace YOUR_DOMAIN_ID
+                        clientId: "0oa6wnyunzFIc1ZJt5d6", // <- replace YOUR_CLIENT_ID
+                        authParams: {
+                            issuer: "https://dev-77574371.okta.com/oauth2/default" // Replace YOUR_DOMAIN_ID
+                        },
+                        redirectUri: "http://127.0.0.1:5500/implicit/callback", // Replace URI if required.
+                    
+                        features: {
+                            registration: true
+                        },
+                        registration: {
+                            parseSchema: function (schema, onSuccess, onFailure) {
+                                // handle parseSchema callback
+                                onSuccess(schema);
+                            },
+                            preSubmit: function (postData, onSuccess, onFailure) {
+                                // handle preSubmit callback
+                                onSuccess(postData);
+                            },
+                            postSubmit: function (response, onSuccess, onFailure) {
+                                // handle postsubmit callback
+                                onSuccess(response);
+                            }
+                        }
+                    });
+
+                    oktaSignIn.authClient.token.getUserInfo().then(function (user) {
+                   //     $logOutButton.style.display = 'block';
+                        // temporary solution:
+                        // show logged-in <div>
+
+                //        $loggedInContainer.classList.remove("hidden");
+                     
+                        document.getElementById("messageBox").style.display = "none";
+                        $accountpage.style.display = "block";
+                    }, function (error) {
+                        oktaSignIn.showSignInToGetTokens({
+                            el: '#okta-login-container'
+                            
+                        }).then(function (tokens) {
+                           
+                            oktaSignIn.authClient.tokenManager.setTokens(tokens);
+                            oktaSignIn.remove();
+
+                            const idToken = tokens.idToken;
+                       //     $logOutButton.style.display = 'block';
+                            // temporary solution:
+                            // show logged-in <div>
+                          
+                                document.getElementById("messageBox").style.display = "none";
+                        $accountpage.style.display = "block";
+                      //      $loggedInContainer.classList.remove("hidden");
+
+                        }).catch(function (err) {
+                            console.error(err);
+                        });
+                    });
+
+                    function logoff() {
+                        oktaSignIn.authClient.signOut();
+                        location.reload();
+                        // temporary solution:
+                        // hide logged-in <div>
+                  //      $loggedInContainer.classList.add("hidden");
+                    }
+
+                    $logoffbutton.addEventListener("click", logoff, false);
+                }(OktaSignIn));
+            </script>
+        </div>
+       
+
+    </div>
+    <footer>
+        FOOTER
+    </footer>
+</div>
+
+</html>

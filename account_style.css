@@ -1,6 +1,7 @@
 body {
     background-color:rgb(59, 59, 59);
 }
+
 :root {
     --main-radius:5px;
     --main-padding:-30px;
@@ -34,17 +35,6 @@ main {
     background-color: rgb(59,59,59);
     grid-area: main;
     padding-top: var(--main-padding);
-       /* The image used */
-       background-image: url("images/background.jfif");
-  
-       /* Full height */
-       height: 100%;
-     
-       /* Center and scale the image nicely */
-       background-position: center center;
-       background-attachment: fixed;
-       background-repeat: no-repeat;
-       background-size: cover;
 }
 #content {
     background-color: rgb(59, 59, 59);
@@ -56,31 +46,6 @@ footer {
     background-color: orange;
     grid-area: footer;
     padding-top: var(--main-padding);
-    font-size: 15px;
-}
-.company-info {
-    margin-left: auto;
-    margin-right: auto;
-    text-transform: none;
-    margin-top: 0%;
-    width: 50%;
-    font-size: 14.76px;
-    height: 50%;
-    overflow:auto;
-    color: orange;
-    text-align: justify;
-}
-h1 {
-    color:white;
-}
-@media only screen and (max-width:1900px) {
-    .company-info {
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        width: 100%;
-        font-size: 15px;
-    }
 }
 @media only screen and (max-width:550px) {
     .container {
@@ -98,26 +63,6 @@ h1 {
     main {
         border-radius: 3%;
     }
-    .company-info {
-        margin-left: 0%;
-        margin-right: 0%;
-        width: 100%;
-        font-size: 12px;
-    }
-}
-
-
-
-h2 {
-    font-size: 1.5vw;
-    margin-top: -1%;
-    text-align: center;
-    font-family: "Gruppo";
-    color: white;
-    font-style: italic;
-    text-shadow: 2px 2px 2px black
-    
-    
 }
 .logo {
     margin-top: 10px;
@@ -145,24 +90,57 @@ h2 {
     background-color: rgb(59, 59, 59);
     font-family: "Poppins";
 }
+#account-page {
+    display: none;
+}
+#okta-sign-in.auth-container.main-container[data-se=auth-container] {
+    border-color: orange;
+    border-style: dotted;
+    background: #222222;
+  }
+  #okta-sign-in .o-form .o-form-input #okta-signin-username {
+    background: #111;
+    color: #dddddd;
+  }
+  #okta-sign-in .o-form-input-name-username {
+    border: 0 !important;
+    color: #dddddd;
+  }
 
-.Navbar a:hover {
-    background-color: orange;
+  #okta-sign-in .o-form .o-form-input #okta-signin-password {
+    background: #111;
+    color: #dddddd;
+  }
+  #okta-sign-in.auth-container .okta-form-input-field {
+    background: #111 !important;
+    border: 0 !important;
+    color: #dddddd;
 }
-.csharp-icon {
-  max-width: 100%;
-  height: auto;
+#okta-sign-in .o-form .input-fix input[type=number], #okta-sign-in .o-form .input-fix input[type=password], #okta-sign-in .o-form .input-fix input[type=tel], #okta-sign-in .o-form .input-fix input[type=text], #okta-sign-in .o-form .input-fix input[type=textbox] {
+color: white !important;
 }
-.css-icon {
-    max-width: 100%;
-    height: auto;
-}
-.js-icon {
-    max-width: 100%;
-    height: auto;
-}
-.html-icon {
-    width: auto;
+  #okta-sign-in.auth-container .o-form-head {
+    color: #dddddd;
+  }
 
-    height: auto;
-}
+  #okta-sign-in.auth-container .button-primary {
+    background: #111 !important;
+    border-color: #111 !important;
+    color: #dddddd !important;
+  }
+
+  #okta-sign-in.auth-container.main-container .auth-footer {
+    color: #dddddd !important;
+  }
+
+  #okta-sign-in.auth-container.main-container .auth-header {
+    border-color: #111;
+  }
+  
+  #okta-sign-in .o-form .custom-checkbox label {
+    color: #ddd;
+  }
+  
+  #okta-sign-in .custom-checkbox input {
+    background: #111;
+  }

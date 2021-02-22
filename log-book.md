@@ -60,7 +60,7 @@ I still haven't figured out how to retrieve first name from Okta, so email will 
 
 # Monday 2021-02-23 [INSERT TIMESTAMP TOMORROW]
 ## Yesterday
-* **~~Finish designing account page~~** - **Basic features are there. Verifying with @gustavnyberg if the current data retrieval is accepted for this assignment.
+* **~~Finish designing account page~~** - **Basic features are there. Verifying with @gustavnyberg if the current data retrieval is accepted for this assignment.**
 * **~~Research REST-API to use~~** - **Implemented Weather API together with Geolocation to retrieve local weather data based on current location.**
 
 ## Today

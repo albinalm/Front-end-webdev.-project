@@ -57,6 +57,7 @@ The solution became a weather API to retrieve weather data according to your loc
 Regarding the data retrieval, I wasn't sure how to begin or understanding the syntax. But after some research together with trial, error and some experiments during live view, I  managed to get it working.
 
 I still haven't figured out how to retrieve first name from Okta, so email will do for now.
+#### Update from a later point; I managed to get first name working! And I have barely any idea why!
 
 # Monday 2021-02-23 [INSERT TIMESTAMP TOMORROW]
 ## Yesterday
@@ -64,5 +65,4 @@ I still haven't figured out how to retrieve first name from Okta, so email will 
 * **~~Research REST-API to use~~** - **Implemented Weather API together with Geolocation to retrieve local weather data based on current location.**
 
 ## Today
-* Research Okta and retrieving first name
 * Discuss with Gustav if your project is on track.

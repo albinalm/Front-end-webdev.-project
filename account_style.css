@@ -93,6 +93,22 @@ footer {
 #account-page {
     display: none;
 }
+#weather-container {
+  background: white;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+  border: 2px solid lightgray;
+  
+}
+
+
+
+
+
+
+
 #okta-sign-in.auth-container.main-container[data-se=auth-container] {
     border-color: orange;
     border-style: dotted;

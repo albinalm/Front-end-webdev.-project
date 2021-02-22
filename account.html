@@ -12,7 +12,6 @@
         type="text/javascript"></script>
     <link href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/5.1.5/css/okta-sign-in.min.css"
         type="text/css" rel="stylesheet" />
-
     <title>Logga in på Forgify</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
 </head>
@@ -36,11 +35,24 @@
     </main>
     <div id="content">
         <div id="account-page">
+            <h1 id="welcome-label">Welcome [NAME]!</h1>
+            <div id="weather-container">
+                <p id="city_name">
+
+                </p>
+                <p id="temp">
+
+                </p>
+                <p id="weathertype">
+
+                </p>
+                <img id="weathersymbol" src="#">
+            </div>
             <button type="button" id="logoff-button">Log off</button>
         </div>
         <div id="okta-login-container">
             <script type="text/javascript">
-            
+                var email = "empty";
                 (function (OktaSignIn) {
                     const $accountpage = document.getElementById("account-page");
                     const $logoffbutton = document.getElementById("logoff-button");
@@ -49,10 +61,14 @@
                         baseUrl: "https://dev-77574371.okta.com", // Replace YOUR_DOMAIN_ID
                         clientId: "0oa6wnyunzFIc1ZJt5d6", // <- replace YOUR_CLIENT_ID
                         authParams: {
-                            issuer: "https://dev-77574371.okta.com/oauth2/default" // Replace YOUR_DOMAIN_ID
+                            issuer: "https://dev-77574371.okta.com/oauth2/default", // Replace YOUR_DOMAIN_ID
+                            scopes: ['openid', 'profile'],
+                            responseType: ['id_token'],
+                            responseMode: 'fragment',
+                            pkce: true
                         },
                         redirectUri: "http://127.0.0.1:5500/implicit/callback", // Replace URI if required.
-                    
+
                         features: {
                             registration: true
                         },
@@ -73,50 +89,89 @@
                     });
 
                     oktaSignIn.authClient.token.getUserInfo().then(function (user) {
-                   //     $logOutButton.style.display = 'block';
-                        // temporary solution:
-                        // show logged-in <div>
-
-                //        $loggedInContainer.classList.remove("hidden");
-                     
+                        console.log(user); //Redan inloggad
                         document.getElementById("messageBox").style.display = "none";
                         $accountpage.style.display = "block";
+                        getGeoData();
                     }, function (error) {
                         oktaSignIn.showSignInToGetTokens({
                             el: '#okta-login-container'
-                            
+
                         }).then(function (tokens) {
-                           
+
                             oktaSignIn.authClient.tokenManager.setTokens(tokens);
                             oktaSignIn.remove();
 
                             const idToken = tokens.idToken;
-                       //     $logOutButton.style.display = 'block';
-                            // temporary solution:
-                            // show logged-in <div>
-                          
-                                document.getElementById("messageBox").style.display = "none";
-                        $accountpage.style.display = "block";
-                      //      $loggedInContainer.classList.remove("hidden");
+                            document.getElementById("messageBox").style.display = "none";
+                            $accountpage.style.display = "block";
+                            console.log(user); //VId  inlogg
+                         
+                            getGeoData();
 
                         }).catch(function (err) {
                             console.error(err);
                         });
                     });
+                    var city; //Nuvarande stad, kommer användas i väderdata
+                    async function getGeoData() {
+                        var url = "http://ipinfo.io?token=f9b722d8e026b3";
+                        fetch(url, {
+                            method: "GET"
+                        })
+                            .then(resp => resp.json())
+                            .then(function (dataContainer) {
+                                city = dataContainer.city;
+                            })
+                            .catch(function (error) {
+                                console.log(error);
+                            });
+                            getName();
+                    }
+                    async function getName() {
+                        const userClaims = await oktaSignIn.authClient.getUser();
+                        email = userClaims.given_name;
+                       
+                        document.getElementById("welcome-label").innerHTML = document.getElementById("welcome-label").innerHTML.replace("[NAME]", email);
+                        getWeatherData();
+
+                    }
+
+                    function getWeatherData() {
+                        console.log(city);
+                        var url = "https://api.weatherbit.io/v2.0/forecast/daily?city=[CITY],se,&key=d8d340b8bc7e413593ef5fb4cecdf2f2&lang=en";
+                        url = url.replace("[CITY]", city);
+                        fetch(url, {
+                            method: "GET"
+                        })
+                            .then(resp => resp.json())
+                            .then(function (dataContainer) {
+                                document.getElementById("city_name").innerHTML = "City: " + dataContainer.city_name;
+                                document.getElementById("temp").innerHTML = "Temperature: " + dataContainer.data[0].temp + "°C";
+                                document.getElementById("weathertype").innerHTML = dataContainer.data[0].weather.description;
+                                document.getElementById("weathersymbol").src = "images/weather_symbols/" + dataContainer.data[0].weather.icon + ".png";
+                                console.log(dataContainer.data[0]);
+                            })
+                            .catch(function (error) {
+                                console.log(error);
+                            });
+                    }
 
                     function logoff() {
                         oktaSignIn.authClient.signOut();
                         location.reload();
                         // temporary solution:
                         // hide logged-in <div>
-                  //      $loggedInContainer.classList.add("hidden");
+                        //      $loggedInContainer.classList.add("hidden");
                     }
 
                     $logoffbutton.addEventListener("click", logoff, false);
                 }(OktaSignIn));
+
+
             </script>
         </div>
-       
+
 
     </div>
     <footer>

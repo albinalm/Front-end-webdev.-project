@@ -75,3 +75,4 @@ I still haven't figured out how to retrieve first name from Okta, so email will 
 
 # Friday 2021-02-26
 * Go through project and make sure everything is according to project guidelines.
+* Finish some designing to acount page.

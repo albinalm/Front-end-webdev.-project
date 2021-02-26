@@ -42,13 +42,54 @@
                 Loading data... please wait
             </p>
         </div>
-            <h1 id="welcome-label">Welcome [NAME]!</h1>
-        <div id="account-page-desc">
-        Here in this page there will be a rich tab-view in the future, where you can see your inquiries, orders and history.
-        There will be forms to make an order, request a quotation or and regular contact information.
+        <h1 id="welcome-label">Welcome back [NAME]!</h1>
+        <div id="menu-buttons">
+            <button type="button" id="button_contactus">Contact us</button>
+            <button type="button" id="button_inquiry">Make an inquiry</button>
+        
         </div>
-        <br><br>
-        <button type="button" id="logoff-button">Log off</button>
+        <br>
+        <div id="account-page-desc">
+         
+            <div class="order-history-box">
+                THIS BOX IS JUST AN EXAMPLE ORDER HISTORY FORM
+                <br>
+                2019-03-54 [Order: 2355] Order has been processed and a price offer has been made
+                <br>
+                2019-03-54 [Order: 2355] Order has been recieved and is under validation
+                <br>
+                2019-03-54 [Order: 2355] Order has been recieved and is under validation
+                <br>
+                2019-03-54 [Order: 2355] Order has been recieved and is under validation
+                <br>
+                2019-03-54 [Order: 2355] Order has been recieved and is under validation
+                <br>
+                2019-03-54 [Order: 2355] Order has been recieved and is under validation
+                <br>
+                2019-03-54 [Order: 2355] Order has been recieved and is under validation
+                <br>
+                2019-03-54 [Order: 2355] Order has been recieved and is under validation
+                <br>
+                2019-03-54 [Order: 2355] Order has been recieved and is under validation
+                <br>
+                2019-03-54 [Order: 2355] Order has been recieved and is under validation
+                <br>
+                2019-03-54 [Order: 2355] Order has been recieved and is under validation
+                <br>
+                2019-03-54 [Order: 2355] Order has been recieved and is under validation
+                <br>
+                2019-03-54 [Order: 2355] Order has been recieved and is under validation
+                <br>
+                2019-03-54 [Order: 2355] Order has been recieved and is under validation
+                <br>
+                2019-03-54 [Order: 2355] Order has been recieved and is under validation
+            </div>
+            <br>
+            <button type="button" id="logoff-button">Log off</button>
+            <h2 style="color: red">This page will be improved later on upon private development.</h2>
+        </div>
+  
+    
         <div id="okta-login-container">
             <script type="text/javascript">
                 var email = "empty";
@@ -57,6 +98,7 @@
                     const $logoffbutton = document.getElementById("logoff-button");
                     const $loadingbox = document.getElementById("loading-box");
                     const $welcomelabel = document.getElementById("welcome-label");
+                    const $menubuttons = document.getElementById("menu-buttons");
                     const oktaSignIn = new OktaSignIn({
                         baseUrl: "https://dev-77574371.okta.com", // Replace YOUR_DOMAIN_ID
                         clientId: "0oa6wnyunzFIc1ZJt5d6", // <- replace YOUR_CLIENT_ID
@@ -157,7 +199,7 @@
                                 $welcomelabel.style.display = "block";
                                 $accountpagedesc.style.display = "block";
                                 $logoffbutton.style.display = "block";
-                              
+                                $menubuttons.style.display = "block";
                                 $loadingbox.style.display = "none"; //Turn off loading box
                             })
                             .catch(function (error) {
@@ -188,7 +230,8 @@
             </p>
             <p id="weathertype">
             </p>
-            <img id="weathersymbol" src="images/transparent.png"> <!--Default is a transparent image to avoid ugly borders-->
+            <img id="weathersymbol" src="images/transparent.png">
+            <!--Default is a transparent image to avoid ugly borders-->
         </div>
     </footer>
 </div>

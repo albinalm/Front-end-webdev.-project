@@ -76,3 +76,9 @@ I still haven't figured out how to retrieve first name from Okta, so email will 
 # Friday 2021-02-26 12:00
 * Go through project and make sure everything is according to project guidelines.
 * Finish some designing to acount page.
+
+# Friday 2021-02-26 14:35
+* **~~Go through project and make sure everything is according to project guidelines.~~** - Finished according to PDF
+* **~~Finish some designing to acount page.~~** - Finished doing prototype layout
+* ***NEW** **~~Cleanup code~~** - Code has been cleaned up.
+* ***NEW** **~~Add favicon~~** - Favicon has been added.

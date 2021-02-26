@@ -73,6 +73,6 @@ I still haven't figured out how to retrieve first name from Okta, so email will 
 # Thursday 2021-02-25
 **Time off due to occuring events regarding family and mechanical appointments.**
 
-# Friday 2021-02-26
+# Friday 2021-02-26 12:00
 * Go through project and make sure everything is according to project guidelines.
 * Finish some designing to acount page.

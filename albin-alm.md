@@ -59,10 +59,19 @@ Regarding the data retrieval, I wasn't sure how to begin or understanding the sy
 I still haven't figured out how to retrieve first name from Okta, so email will do for now.
 #### Update from a later point[17:20, Monday]; I managed to get first name working! And I have barely any idea why!
 
-# Monday 2021-02-23 [INSERT TIMESTAMP TOMORROW]
+# Tuesday 2021-02-23 11:33
 ## Yesterday
 * **~~Finish designing account page~~** - **Basic features are there. Verifying with @gustavnyberg if the current data retrieval is accepted for this assignment.**
 * **~~Research REST-API to use~~** - **Implemented Weather API together with Geolocation to retrieve local weather data based on current location.**
 
 ## Today
-* Discuss with Gustav if your project is on track.
+* **~~Discuss with Gustav if your project is on track.~~** - **Postphoned**
+
+# Wednesday 2021-02-24
+**Time off due to occuring events regarding family and mechanical appointments.**
+
+# Thursday 2021-02-25
+**Time off due to occuring events regarding family and mechanical appointments.**
+
+# Friday 2021-02-26
+* Go through project and make sure everything is according to project guidelines.

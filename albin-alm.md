@@ -65,7 +65,7 @@ I still haven't figured out how to retrieve first name from Okta, so email will 
 * **~~Research REST-API to use~~** - **Implemented Weather API together with Geolocation to retrieve local weather data based on current location.**
 
 ## Today
-* **~~Discuss with Gustav if your project is on track.~~** - **Postphoned**
+* **~~Discuss with Gustav if your project is on track.~~** - **Cancelled**
 
 # Wednesday 2021-02-24
 **Time off due to occuring events regarding family and mechanical appointments.**
